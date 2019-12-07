@@ -1,0 +1,20 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bearbeitung</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    </script>
+</head>
+<body>
+    <form action="/schiedsrichter/bearbeitung/" method="post">
+        {% csrf_token %}
+        {{addform.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+{% endblock %}

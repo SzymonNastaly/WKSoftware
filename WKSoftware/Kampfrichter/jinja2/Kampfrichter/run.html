@@ -1,0 +1,22 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+<!--hier wäre load static-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schiedsrichter</title>
+    <!-- <script src="{{static('Kampfrichter/liste.js') }}"></script> -->
+</head>
+<body>
+    <div style="margin-left:10px;">
+        <p><b>Bearbeitung des Laufes </b>{{run.name}} {{run.sex}}{{run.age}} Lauf {{run.number}}</p>
+        <form action="/schiedsrichter/bearbeitung/lauf{{run.id}}/" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            {{EditForm.as_p()}}
+            <input type="submit" value="Submit">
+        </form>
+        <a href="http://localhost:8000/schiedsrichter/bearbeitung/">Zur Laufliste</a>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kampfrichter</title>
+    <script>
+        var relays = {{relays|safe}};
+        var relays_data = {{relays_data|safe}};
+        var runs_data = {{runs_data|safe}}
+    </script>
+    <script src="{{static('Kampfrichter/kampfrichter.js') }}"></script>
+</head>
+<body>
+<div style="margin-left:10px;">
+    <form action="/kampfrichter/" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        {{runform.as_p()}}
+        <input type="submit" value="Submit">
+    </form>
+    <p id="internet_info">Kein Internetzugang verfügbar! (Überprüfung/Änderung der Daten nicht möglich)</p>
+    <p id="id_info">Info: Ein Lauf mit diesen Daten existiert nicht!</p>
+</div>
+</body>
+</html>
+{% endblock %}

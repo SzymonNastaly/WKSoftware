@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <ul style="list-style-type:none;overflow:hidden;margin:0;padding:0;">
+        <li style="float:left"><a style="padding:14px 16px;display:block;text-align: center;" href='http://localhost:8000/kampfrichter/'>Kampfrichter</a></li>
+        <li style="float:left"><a style="padding:14px 16px;display:block;text-align: center;" href='http://localhost:8000/schiedsrichter/'>Lauf-Übersicht</a></li>
+        <li style="float:left"><a style="padding:14px 16px;display:block;text-align: center;" href='http://localhost:8000/schiedsrichter/bearbeitung/'>Bearbeitung</a></li>
+        <li style="float:left"><a style="padding:14px 16px;display:block;text-align: center;" href='http://localhost:8000/schiedsrichter/erstellung/'>Erstellung</a></li>
+        <li style="float:right"><a style="padding:14px 16px;display:block;text-align: center;" href='http://localhost:8000/logout/'>Logout</a></li>
+        <li style="float:right"><a style="padding:14px 16px;display:block;text-align: center;" href='http://localhost:8000/login/'>Login</a></li>
+    </ul>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

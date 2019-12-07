@@ -1,0 +1,14 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <p>Bitte oben das gesuchte auswählen.</p>
+</body>
+</html>
+{% endblock %}

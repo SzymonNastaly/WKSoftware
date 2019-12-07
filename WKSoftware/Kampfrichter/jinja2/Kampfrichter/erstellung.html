@@ -1,0 +1,19 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Erstellung</title>
+</head>
+<body>
+<div style="margin-left:10px;">
+<p><b>Zum Erstellen neuer Läufe:</b></p>
+    <form action="/schiedsrichter/erstellung/" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        {{AddForm.as_p()}}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

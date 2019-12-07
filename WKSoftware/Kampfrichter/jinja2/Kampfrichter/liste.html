@@ -1,0 +1,23 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+<!--hier wäre load static-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5" >
+    <!--<meta http-equiv="refresh" content="5" >-->
+    <title>Schiedsrichter</title>
+    <!-- <script src="{{static('Kampfrichter/liste.js') }}"></script> -->
+</head>
+<body>
+    <div style="margin-left:10px;">
+    {% for run in total_data %}
+        <a href="http://localhost:8000/schiedsrichter/bearbeitung/lauf{{run.id}}">
+            {{run.name}} {{run.sex}}{{run.age}} Lauf {{run.number}}
+        </a>&nbsp
+        <a href="http://localhost:8000/schiedsrichter/bearbeitung/delete{{run.id}}">Löschen</a> <br/>
+    {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}

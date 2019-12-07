@@ -1,0 +1,28 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+<!--hier wäre load static-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5" >
+    <!--<meta http-equiv="refresh" content="5" >-->
+    <title>Schiedsrichter</title>
+    <script src="{{static('Kampfrichter/schiedsrichter.js') }}"></script>
+</head>
+<body>
+    <div style="margin-left:10px;">
+    {% for run in total_data %}
+        <p>{{run.name}} {{run.sex}}{{run.age}} Lauf {{run.number}}:<br>
+        Verstoß: {% if run.violation %} <input type="checkbox" disabled="disabled"  checked>
+        {% else %}<input type="checkbox" disabled="disabled" >{% endif %}<br>
+        {% if run.is_relay %}
+            Wechsel bereit: {% if relays_data[run.id] %} <input type="checkbox" disabled="disabled" checked>
+            {% else %}<input type="checkbox" disabled="disabled" >{% endif %}
+        {% endif %}
+        </p>
+        {% endfor %}
+        <a href="http://localhost:8000/schiedsrichter/bearbeitung/">Zur Bearbeitung der Wettkämpfe (->"Bearbeitung")</a>
+    </div>
+</body>
+</html>
+{% endblock %}

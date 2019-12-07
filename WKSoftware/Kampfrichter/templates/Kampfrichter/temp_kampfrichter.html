@@ -1,0 +1,25 @@
+{% extends 'Kampfrichter/base.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kampfrichter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var relays = {{relays|safe}};
+        var relays_data = {{relays_data|safe}};
+        var runs_data = {{runs_data|safe}}
+    </script>
+    <script src="{% static 'Kampfrichter/kampfrichter.js'%}"></script>
+</head>
+<body>
+    <form action="/kampfrichter/" method="post">
+        {% csrf_token %}
+        {{runform.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <p id="id_info">Info: Ein Lauf mit diesen Daten existiert nicht!</p>
+</body>
+</html>
+{% endblock %}

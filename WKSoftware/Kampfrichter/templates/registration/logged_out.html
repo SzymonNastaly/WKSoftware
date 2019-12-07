@@ -1,0 +1,9 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+  <h2>Logout</h2>
+  {% csrf_token %}
+  <p>You succesfully logged out!</p>
+{% endblock %}
